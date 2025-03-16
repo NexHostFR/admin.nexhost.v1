@@ -22,7 +22,7 @@ class DashboardController extends Controller
                     "value" => DB::connection("mysql_shop")->table("commandes")->count()
                 ],
                 [
-                    "title" => "Nombre de ticket ouvert",
+                    "title" => "Nombre de ticket en attente d'une réponse",
                     "value" => $ticketsListe->count()
                 ]
             ],

@@ -16,4 +16,5 @@ Route::middleware('auth')->group(function () {
     Route::get('/', [DashboardController::class, "landingPage"])->name('dashboard');
 
     Route::get('/tickets/view/{id}', [TicketPageController::class, "viewTicket"])->name('ticket');
+    Route::post('/tickets/view/{id}', [TicketPageController::class, "postResponseTicket"]);
 });
