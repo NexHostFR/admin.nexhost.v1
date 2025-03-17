@@ -54,6 +54,9 @@ class UserPageController extends Controller
             $UserManager->name = $request->name;
             $UserManager->email = $request->email;
             $UserManager->role = $request->role;
+            if($request->password) {
+                $UserManager->password = Hash::make($request->password);
+            }
             $UserManager->save();
         } catch (\Exception $e) {
             return response()->json([
