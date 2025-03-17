@@ -3,6 +3,7 @@
 use App\Http\Controllers\AuthPageController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\TicketPageController;
+use App\Http\Controllers\UserPageController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware('guest')->group(function () {
@@ -17,4 +18,11 @@ Route::middleware('auth')->group(function () {
 
     Route::get('/tickets/view/{id}', [TicketPageController::class, "viewTicket"])->name('ticket');
     Route::post('/tickets/view/{id}', [TicketPageController::class, "postResponseTicket"]);
+
+    // Gestion des users
+    Route::get("/users", [UserPageController::class, "viewUserListe"]);
+    Route::get("/users/create", [UserPageController::class, "viewUserCreate"]);
+    Route::post("/users/create", [UserPageController::class, "postUser"]);
+    Route::get("/users/{id}", [UserPageController::class, "viewUser"]);
+    Route::post("/users", [UserPageController::class, "updateUser"]);
 });

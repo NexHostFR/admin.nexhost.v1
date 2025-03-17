@@ -19,6 +19,7 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'username' => 'admin',
             'password' => Hash::make('admin'),
+            'role' => "superadmin"
         ]);
     }
 }

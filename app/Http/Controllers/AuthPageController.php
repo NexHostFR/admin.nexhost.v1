@@ -10,7 +10,9 @@ use Illuminate\Support\Facades\Hash;
 class AuthPageController extends Controller
 {
     public function viewLogin() {
-        return view('auth.login');
+        return view('auth.login', [
+            "slimHeader" => true
+        ]);
     }
 
     public function postLogin(Request $request) {
