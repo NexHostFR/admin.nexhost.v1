@@ -65,4 +65,21 @@ class UserPageController extends Controller
             ]);
         }
     }
+
+    public function deleteUser($id) {
+        try {
+            if(Auth::user()->id == $id) {
+                return response()->json([
+                    "status" => "error",
+                    "message" => "Vous ne pouvez pas supprimer votre propre compte"
+                ]);
+            }
+            User::destroy($id);
+        } catch (\Exception $e) {
+            return response()->json([
+                "status" => "error",
+                "message" => $e->getMessage()
+            ]);
+        }
+    }
 }

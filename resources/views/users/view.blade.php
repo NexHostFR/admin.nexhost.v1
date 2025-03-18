@@ -27,10 +27,11 @@
                 <label for="showPassword">Afficher le mot de passe</label>
             </div>
         </div>        
-        <div>
+        <div class="flex flex-row">
             <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded my-3">
                 Modifier
             </button>
+            <a href="/users/delete/{{$user->id}}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded my-3"></a>
         </div>
     </form>
 </main>
