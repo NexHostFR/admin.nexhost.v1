@@ -10,6 +10,12 @@
                 <div>
                     <a href="/users">Liste des utilisateurs</a>
                 </div>
+                <div>
+                    <a href="/products">Liste de produit</a>
+                </div>
+                <div>
+                    <a href="/products/category">Liste de Categorie</a>
+                </div>
             @endif
         </div>
     @endif
