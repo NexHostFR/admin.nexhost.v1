@@ -10,6 +10,7 @@ return new class extends Migration
      * Run the migrations.
      */
 
+    protected $connection = "mysql_vitrine";
     protected $table = "";
 
     public function up(): void

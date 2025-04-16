@@ -9,6 +9,8 @@ return new class extends Migration
     /**
      * Run the migrations.
      */
+    protected $connection = "mysql_vitrine";
+
     public function up(): void
     {
         Schema::create('categories', function (Blueprint $table) {
